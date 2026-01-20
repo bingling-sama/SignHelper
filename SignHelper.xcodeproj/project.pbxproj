@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		BFAFCAB62F1F33BE00AABA23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFAFCAA02F1F33BC00AABA23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFAFCAA72F1F33BC00AABA23;
+			remoteInfo = SignHelper;
+		};
+		BFAFCAC02F1F33BE00AABA23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFAFCAA02F1F33BC00AABA23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFAFCAA72F1F33BC00AABA23;
+			remoteInfo = SignHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BFAFCAA82F1F33BC00AABA23 /* SignHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFAFCAB52F1F33BE00AABA23 /* SignHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFAFCABF2F1F33BE00AABA23 /* SignHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BFAFCAAA2F1F33BC00AABA23 /* SignHelper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SignHelper;
+			sourceTree = "<group>";
+		};
+		BFAFCAB82F1F33BE00AABA23 /* SignHelperTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SignHelperTests;
+			sourceTree = "<group>";
+		};
+		BFAFCAC22F1F33BE00AABA23 /* SignHelperUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SignHelperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFAFCAA52F1F33BC00AABA23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAFCAB22F1F33BE00AABA23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAFCABC2F1F33BE00AABA23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BFAFCA9F2F1F33BC00AABA23 = {
+			isa = PBXGroup;
+			children = (
+				BFAFCAAA2F1F33BC00AABA23 /* SignHelper */,
+				BFAFCAB82F1F33BE00AABA23 /* SignHelperTests */,
+				BFAFCAC22F1F33BE00AABA23 /* SignHelperUITests */,
+				BFAFCAA92F1F33BC00AABA23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFAFCAA92F1F33BC00AABA23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFAFCAA82F1F33BC00AABA23 /* SignHelper.app */,
+				BFAFCAB52F1F33BE00AABA23 /* SignHelperTests.xctest */,
+				BFAFCABF2F1F33BE00AABA23 /* SignHelperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFAFCAA72F1F33BC00AABA23 /* SignHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFAFCAC92F1F33BE00AABA23 /* Build configuration list for PBXNativeTarget "SignHelper" */;
+			buildPhases = (
+				BFAFCAA42F1F33BC00AABA23 /* Sources */,
+				BFAFCAA52F1F33BC00AABA23 /* Frameworks */,
+				BFAFCAA62F1F33BC00AABA23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BFAFCAAA2F1F33BC00AABA23 /* SignHelper */,
+			);
+			name = SignHelper;
+			packageProductDependencies = (
+			);
+			productName = SignHelper;
+			productReference = BFAFCAA82F1F33BC00AABA23 /* SignHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFAFCAB42F1F33BE00AABA23 /* SignHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFAFCACC2F1F33BE00AABA23 /* Build configuration list for PBXNativeTarget "SignHelperTests" */;
+			buildPhases = (
+				BFAFCAB12F1F33BE00AABA23 /* Sources */,
+				BFAFCAB22F1F33BE00AABA23 /* Frameworks */,
+				BFAFCAB32F1F33BE00AABA23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFAFCAB72F1F33BE00AABA23 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BFAFCAB82F1F33BE00AABA23 /* SignHelperTests */,
+			);
+			name = SignHelperTests;
+			packageProductDependencies = (
+			);
+			productName = SignHelperTests;
+			productReference = BFAFCAB52F1F33BE00AABA23 /* SignHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFAFCABE2F1F33BE00AABA23 /* SignHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFAFCACF2F1F33BE00AABA23 /* Build configuration list for PBXNativeTarget "SignHelperUITests" */;
+			buildPhases = (
+				BFAFCABB2F1F33BE00AABA23 /* Sources */,
+				BFAFCABC2F1F33BE00AABA23 /* Frameworks */,
+				BFAFCABD2F1F33BE00AABA23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFAFCAC12F1F33BE00AABA23 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BFAFCAC22F1F33BE00AABA23 /* SignHelperUITests */,
+			);
+			name = SignHelperUITests;
+			packageProductDependencies = (
+			);
+			productName = SignHelperUITests;
+			productReference = BFAFCABF2F1F33BE00AABA23 /* SignHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFAFCAA02F1F33BC00AABA23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					BFAFCAA72F1F33BC00AABA23 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					BFAFCAB42F1F33BE00AABA23 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = BFAFCAA72F1F33BC00AABA23;
+					};
+					BFAFCABE2F1F33BE00AABA23 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = BFAFCAA72F1F33BC00AABA23;
+					};
+				};
+			};
+			buildConfigurationList = BFAFCAA32F1F33BC00AABA23 /* Build configuration list for PBXProject "SignHelper" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFAFCA9F2F1F33BC00AABA23;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BFAFCAA92F1F33BC00AABA23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFAFCAA72F1F33BC00AABA23 /* SignHelper */,
+				BFAFCAB42F1F33BE00AABA23 /* SignHelperTests */,
+				BFAFCABE2F1F33BE00AABA23 /* SignHelperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFAFCAA62F1F33BC00AABA23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAFCAB32F1F33BE00AABA23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAFCABD2F1F33BE00AABA23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFAFCAA42F1F33BC00AABA23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAFCAB12F1F33BE00AABA23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFAFCABB2F1F33BE00AABA23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFAFCAB72F1F33BE00AABA23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFAFCAA72F1F33BC00AABA23 /* SignHelper */;
+			targetProxy = BFAFCAB62F1F33BE00AABA23 /* PBXContainerItemProxy */;
+		};
+		BFAFCAC12F1F33BE00AABA23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFAFCAA72F1F33BC00AABA23 /* SignHelper */;
+			targetProxy = BFAFCAC02F1F33BE00AABA23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BFAFCAC72F1F33BE00AABA23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFAFCAC82F1F33BE00AABA23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFAFCACA2F1F33BE00AABA23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.booling.SignHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFAFCACB2F1F33BE00AABA23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.booling.SignHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BFAFCACD2F1F33BE00AABA23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.booling.SignHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignHelper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SignHelper";
+			};
+			name = Debug;
+		};
+		BFAFCACE2F1F33BE00AABA23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.booling.SignHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignHelper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SignHelper";
+			};
+			name = Release;
+		};
+		BFAFCAD02F1F33BE00AABA23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.booling.SignHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SignHelper;
+			};
+			name = Debug;
+		};
+		BFAFCAD12F1F33BE00AABA23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.booling.SignHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SignHelper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFAFCAA32F1F33BC00AABA23 /* Build configuration list for PBXProject "SignHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFAFCAC72F1F33BE00AABA23 /* Debug */,
+				BFAFCAC82F1F33BE00AABA23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFAFCAC92F1F33BE00AABA23 /* Build configuration list for PBXNativeTarget "SignHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFAFCACA2F1F33BE00AABA23 /* Debug */,
+				BFAFCACB2F1F33BE00AABA23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFAFCACC2F1F33BE00AABA23 /* Build configuration list for PBXNativeTarget "SignHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFAFCACD2F1F33BE00AABA23 /* Debug */,
+				BFAFCACE2F1F33BE00AABA23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFAFCACF2F1F33BE00AABA23 /* Build configuration list for PBXNativeTarget "SignHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFAFCAD02F1F33BE00AABA23 /* Debug */,
+				BFAFCAD12F1F33BE00AABA23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFAFCAA02F1F33BC00AABA23 /* Project object */;
+}
