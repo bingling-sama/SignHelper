@@ -11,6 +11,7 @@ struct TranslationView: View {
                 Text("Translation")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .foregroundColor(.primary)
                 Spacer()
             }
             .padding()
@@ -24,9 +25,9 @@ struct TranslationView: View {
                     .clipShape(Circle())
                     .overlay(
                         Circle()
-                            .stroke(Color.gray.opacity(0.5), lineWidth: 2)
+                            .stroke(Color.secondary.opacity(0.5), lineWidth: 2)
                     )
-                    .shadow(radius: 10)
+                    .shadow(color: Color.black.opacity(0.2), radius: 10)
                 
                 if !isRecording {
                     Text("Tap Start to Translate")
@@ -46,10 +47,11 @@ struct TranslationView: View {
                         .font(.title3)
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(Color.primary)
                 }
-                .background(Color.white)
+                .background(Color(UIColor.secondarySystemGroupedBackground))
                 .cornerRadius(20)
-                .shadow(radius: 5)
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
                 .padding(.horizontal)
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             } else {
@@ -66,10 +68,10 @@ struct TranslationView: View {
             }) {
                 Text(isRecording ? "End Recording" : "Start Recording")
                     .font(.headline)
-                    .foregroundColor(isRecording ? .white : .black)
+                    .foregroundColor(isRecording ? .white : .primary)
                     .padding(.vertical, 15)
                     .padding(.horizontal, 40)
-                    .background(isRecording ? Color.red.opacity(0.8) : Color.gray.opacity(0.2))
+                    .background(isRecording ? Color.red.opacity(0.8) : Color(UIColor.secondarySystemBackground))
                     .cornerRadius(30)
             }
             .padding(.bottom, 30)

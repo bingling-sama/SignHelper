@@ -17,7 +17,7 @@ struct AboutView: View {
                 
                 Text("Version 1.0.0")
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary) // Changed from .gray for better adaptability
                 
                 Divider()
                     .padding(.vertical)

@@ -1,9 +1,17 @@
+//
+//  TextToSignView.swift
+//  SignHelper
+//
+//  Created by Lucas Liu on 2026/1/20.
+//
+
 import SwiftUI
 
 struct TextToSignView: View {
     @State private var inputText = ""
     @State private var showResult = false
-    
+    @State private var signImages: [String] = [] // Stores system image names for demo
+
     var body: some View {
         VStack(spacing: 20) {
             HStack {
@@ -16,62 +24,117 @@ struct TextToSignView: View {
             
             // Input Area
             VStack(spacing: 15) {
-                TextField("Type here...", text: $inputText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
+                HStack {
+                    TextField("Enter text (e.g., Hello)", text: $inputText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .font(.body)
+                        .padding(.leading, 5)
+                    
+                    if !inputText.isEmpty {
+                        Button(action: {
+                            inputText = ""
+                            showResult = false
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                        }
+                    }
+                }
+                .padding(.horizontal)
                 
                 Button(action: {
                     // Simulate voice input
-                    inputText = "Thank you"
+                    inputText = "Hello World"
+                    translateToSign()
                 }) {
-                    Label("Voice Input", systemImage: "mic.fill")
-                        .padding()
-                        .background(Color.blue.opacity(0.1))
-                        .cornerRadius(10)
+                    HStack {
+                        Image(systemName: "mic.fill")
+                        Text("Voice Input")
+                    }
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue.opacity(0.1))
+                    .foregroundColor(.blue)
+                    .cornerRadius(12)
                 }
+                .padding(.horizontal)
             }
             
-            Button("Translate to Sign") {
-                withAnimation {
-                    showResult = true
-                }
+            Button(action: {
+                translateToSign()
                 // Dismiss keyboard
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }) {
+                Text("Translate")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(inputText.isEmpty ? Color.gray : Color.blue)
+                    .cornerRadius(12)
             }
+            .padding(.horizontal)
             .disabled(inputText.isEmpty)
-            .buttonStyle(.borderedProminent)
             
-            Divider().padding()
+            Divider()
+                .padding(.vertical, 10)
             
             // Output Area
-            if showResult {
-                VStack {
-                    Text("Sign Language Representation for:")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                    
-                    Text("\"\(inputText)\"")
-                        .font(.headline)
-                        .padding(.bottom)
-                    
-                    // Placeholder for Sign Image/Video
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.orange.opacity(0.2))
-                        .frame(height: 200)
-                        .overlay(
-                            VStack {
-                                Image(systemName: "hand.wave.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.orange)
-                                Text("Sign Language Animation")
-                                    .font(.caption)
+            ScrollView {
+                if showResult {
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("Result:")
+                            .font(.headline)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal)
+                        
+                        // Display sign language visualization (using symbols for demo)
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))], spacing: 20) {
+                            ForEach(Array(inputText.uppercased().enumerated()), id: \.offset) { index, char in
+                                if char.isLetter {
+                                    VStack {
+                                        // In a real app, use actual sign language images here
+                                        // E.g., Image("sign_\(char)")
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .fill(Color.orange.opacity(0.15))
+                                                .frame(width: 70, height: 70)
+                                            
+                                            Image(systemName: "hand.raised.fill") // Placeholder
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 40, height: 40)
+                                                .foregroundColor(.orange)
+                                        }
+                                        
+                                        Text(String(char))
+                                            .font(.title3)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.primary)
+                                    }
+                                }
                             }
-                        )
+                        }
+                        .padding()
+                        .background(Color(UIColor.secondarySystemBackground))
+                        .cornerRadius(15)
+                        .padding(.horizontal)
+                    }
+                    .transition(.opacity)
+                } else {
+                    // Empty State
+                    VStack(spacing: 15) {
+                        Image(systemName: "hand.wave")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 60, height: 60)
+                            .foregroundColor(.secondary.opacity(0.5))
+                        Text("Enter text to see sign language spelling")
+                            .foregroundColor(.secondary)
+                    }
+                    .padding(.top, 40)
                 }
-                .padding()
-                .transition(.opacity)
             }
             
             Spacer()
@@ -81,8 +144,11 @@ struct TextToSignView: View {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
-}
-
-#Preview {
-    TextToSignView()
+    
+    private func translateToSign() {
+        guard !inputText.isEmpty else { return }
+        withAnimation {
+            showResult = true
+        }
+    }
 }
