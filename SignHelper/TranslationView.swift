@@ -5,76 +5,163 @@ struct TranslationView: View {
     @State private var isRecording = false
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 16) {
             // Header
             HStack {
-                Text("Translation")
-                    .font(.largeTitle)
+                Text("Real-time Translation")
+                    .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                 Spacer()
+                if isRecording && !recognizer.translatedSentence.isEmpty {
+                    Button(action: {
+                        recognizer.clearSentence()
+                    }) {
+                        Image(systemName: "trash.circle.fill")
+                            .font(.title2)
+                            .foregroundColor(.secondary)
+                    }
+                }
             }
-            .padding()
-            
-            Spacer()
+            .padding(.horizontal)
+            .padding(.top, 12)
             
             // Camera Preview
             ZStack {
                 CameraView(recognizer: recognizer)
-                    .frame(width: 300, height: 300)
-                    .clipShape(Circle())
+                    .frame(width: 280, height: 280)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                     .overlay(
-                        Circle()
-                            .stroke(Color.secondary.opacity(0.5), lineWidth: 2)
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(
+                                isRecording ? Color.green.opacity(0.6) : Color.secondary.opacity(0.4),
+                                lineWidth: isRecording ? 3 : 2
+                            )
                     )
-                    .shadow(color: Color.black.opacity(0.2), radius: 10)
+                    .shadow(color: Color.black.opacity(0.15), radius: 12)
                 
                 if !isRecording {
-                    Text("Tap Start to Translate")
-                        .font(.caption)
-                        .padding(6)
-                        .background(Color.black.opacity(0.6))
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                        .padding(.top, 240) // Position near bottom of circle
+                    VStack(spacing: 8) {
+                        Image(systemName: "hand.wave.fill")
+                            .font(.system(size: 40))
+                            .foregroundColor(.white.opacity(0.9))
+                        Text("Tap Start to translate sign language")
+                            .font(.caption)
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(20)
+                    .background(Color.black.opacity(0.5))
+                    .cornerRadius(16)
+                } else {
+                    // Live indicator
+                    HStack(spacing: 6) {
+                        Circle()
+                            .fill(Color.green)
+                            .frame(width: 8, height: 8)
+                        Text("Live")
+                            .font(.caption2)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(Color.black.opacity(0.6))
+                    .cornerRadius(12)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .padding(16)
                 }
             }
             
-            // Translation Output
+            // Real-time Translation Output
             if isRecording {
-                VStack(alignment: .leading) {
-                    Text(recognizer.recognizedText.isEmpty ? "Listening for gestures..." : recognizer.recognizedText)
-                        .font(.title3)
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(Color.primary)
+                VStack(alignment: .leading, spacing: 12) {
+                    // Current gesture being detected
+                    HStack {
+                        Text("Detecting:")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Spacer()
+                        Text(recognizer.currentGesture)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                            .lineLimit(1)
+                    }
+                    
+                    Divider()
+                    
+                    // Accumulated translation
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Translation:")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        Text(recognizer.translatedSentence.isEmpty ? "Sign in front of camera — recognized words will appear here" : recognizer.translatedSentence)
+                            .font(.title3)
+                            .fontWeight(.medium)
+                            .foregroundColor(recognizer.translatedSentence.isEmpty ? .secondary : .primary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    
+                    if !recognizer.translatedSentence.isEmpty {
+                        Text("Supported: Hello, Thank You, Help, Dog, Tree, Happy, Hospital")
+                            .font(.caption2)
+                            .foregroundColor(Color(UIColor.tertiaryLabel))
+                    }
                 }
+                .padding(16)
                 .background(Color(UIColor.secondarySystemGroupedBackground))
-                .cornerRadius(20)
-                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
-                .padding(.horizontal)
-                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .cornerRadius(16)
+                .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 4)
+                .padding(.horizontal, 20)
+                .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
-                Spacer().frame(height: 80) // Placeholder to keep layout stable
+                // Hint when not recording
+                Text("Start recording to translate sign language in real time")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 40)
+                    .frame(height: 60)
             }
             
             Spacer()
             
             // Recording Button
             Button(action: {
-                withAnimation {
+                withAnimation(.easeInOut(duration: 0.25)) {
                     isRecording.toggle()
+                    recognizer.isActive = isRecording
+                    if !isRecording {
+                        recognizer.clearSentence()
+                    }
                 }
             }) {
-                Text(isRecording ? "End Recording" : "Start Recording")
-                    .font(.headline)
-                    .foregroundColor(isRecording ? .white : .primary)
-                    .padding(.vertical, 15)
-                    .padding(.horizontal, 40)
-                    .background(isRecording ? Color.red.opacity(0.8) : Color(UIColor.secondarySystemBackground))
-                    .cornerRadius(30)
+                HStack(spacing: 10) {
+                    Image(systemName: isRecording ? "stop.circle.fill" : "play.circle.fill")
+                        .font(.title2)
+                    Text(isRecording ? "Stop" : "Start Translation")
+                        .font(.headline)
+                }
+                .foregroundColor(isRecording ? .white : .primary)
+                .padding(.vertical, 16)
+                .padding(.horizontal, 32)
+                .frame(maxWidth: .infinity)
+                .background {
+                    if isRecording {
+                        Color.red
+                    } else {
+                        LinearGradient(
+                            colors: [Color.blue, Color.blue.opacity(0.85)],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    }
+                }
+                .cornerRadius(16)
             }
-            .padding(.bottom, 30)
+            .padding(.horizontal, 20)
+            .padding(.bottom, 24)
         }
         .background(Color(UIColor.systemGroupedBackground))
     }

@@ -7,22 +7,9 @@
 
 import SwiftUI
 
-struct Lesson: Identifiable, Hashable {
-    let id = UUID()
-    let title: String
-    let icon: String
-    let difficulty: String
-    let progress: Double
-}
-
 struct LearningView: View {
-    let categories: [Lesson] = [
-        Lesson(title: "Greetings", icon: "hand.wave.fill", difficulty: "Easy", progress: 0.8),
-        Lesson(title: "Numbers", icon: "number.circle.fill", difficulty: "Easy", progress: 0.3),
-        Lesson(title: "Family", icon: "person.2.fill", difficulty: "Medium", progress: 0.0),
-        Lesson(title: "Emergency", icon: "exclamationmark.triangle.fill", difficulty: "Hard", progress: 0.0),
-        Lesson(title: "Common Phrases", icon: "bubble.left.and.bubble.right.fill", difficulty: "Medium", progress: 0.1)
-    ]
+    // Use data from SignDataManager
+    let categories = SignDataManager.shared.categories
     
     var body: some View {
         NavigationView {
@@ -45,12 +32,12 @@ struct LearningView: View {
                                 .cornerRadius(5)
                         }
                         
-                        Text("Learn how to sign 'Good Morning'")
+                        Text("Learn how to sign 'Hello'")
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                         
-                        Button(action: {}) {
+                        NavigationLink(destination: LessonDetailView(category: categories[0])) {
                             Text("Start Now")
                                 .font(.headline)
                                 .foregroundColor(.blue)
@@ -70,10 +57,10 @@ struct LearningView: View {
                 }
                 
                 Section(header: Text("Courses")) {
-                    ForEach(categories) { lesson in
-                        NavigationLink(destination: LessonDetailView(lesson: lesson)) {
+                    ForEach(categories) { category in
+                        NavigationLink(destination: LessonDetailView(category: category)) {
                             HStack(spacing: 15) {
-                                Image(systemName: lesson.icon)
+                                Image(systemName: category.icon)
                                     .font(.title2)
                                     .foregroundColor(.white)
                                     .frame(width: 50, height: 50)
@@ -81,25 +68,27 @@ struct LearningView: View {
                                     .cornerRadius(10)
                                 
                                 VStack(alignment: .leading, spacing: 5) {
-                                    Text(lesson.title)
+                                    Text(category.title)
                                         .font(.headline)
+                                        .foregroundColor(.primary)
                                     
                                     HStack {
-                                        Text(lesson.difficulty)
+                                        Text(category.difficulty)
                                             .font(.caption)
                                             .padding(4)
-                                            .background(Color.gray.opacity(0.2))
+                                            .background(Color.secondary.opacity(0.2))
                                             .cornerRadius(4)
+                                            .foregroundColor(.secondary)
                                         
                                         Spacer()
                                         
-                                        // Simple Progress Bar
+                                        // Simple Progress Bar (Random for demo)
                                         ZStack(alignment: .leading) {
                                             Rectangle()
                                                 .frame(width: 80, height: 4)
-                                                .foregroundColor(.gray.opacity(0.2))
+                                                .foregroundColor(Color.secondary.opacity(0.2))
                                             Rectangle()
-                                                .frame(width: 80 * lesson.progress, height: 4)
+                                                .frame(width: 80 * 0.3, height: 4)
                                                 .foregroundColor(.green)
                                         }
                                     }
@@ -117,7 +106,7 @@ struct LearningView: View {
 }
 
 struct LessonDetailView: View {
-    let lesson: Lesson
+    let category: SignCategory
     
     var body: some View {
         ScrollView {
@@ -127,43 +116,45 @@ struct LessonDetailView: View {
                     .fill(Color.blue.opacity(0.1))
                     .frame(height: 200)
                     .overlay(
-                        Image(systemName: lesson.icon)
+                        Image(systemName: category.icon)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 80, height: 80)
                             .foregroundColor(.blue)
                     )
-                    .background(Color(UIColor.secondarySystemBackground)) // Added for better dark mode blend
-
+                    .background(Color(UIColor.secondarySystemBackground))
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    Text(lesson.title)
+                    Text(category.title)
                         .font(.largeTitle)
                         .fontWeight(.bold)
+                        .foregroundColor(.primary)
                     
                     HStack {
-                        Label(lesson.difficulty, systemImage: "speedometer")
+                        Label(category.difficulty, systemImage: "speedometer")
                         Spacer()
-                        Label("\(Int(lesson.progress * 100))% Completed", systemImage: "chart.bar.fill")
+                        Label("30% Completed", systemImage: "chart.bar.fill")
                     }
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     
                     Divider()
                     
-                    Text("In this lesson, you will learn the basic signs for \(lesson.title.lowercased()). Follow the video tutorials below and practice with your camera.")
+                    Text("In this lesson, you will learn the basic signs for \(category.title.lowercased()). Follow the video tutorials below and practice with your camera.")
                         .font(.body)
                         .lineSpacing(5)
+                        .foregroundColor(.primary)
                     
                     Text("Content")
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.top)
+                        .foregroundColor(.primary)
                     
-                        // Lesson Steps Placeholder
-                    ForEach(1...3, id: \.self) { i in
+                    // Lesson Steps from Data Source
+                    ForEach(Array(category.signs.enumerated()), id: \.element) { index, sign in
                         HStack(spacing: 15) {
-                            Text("\(i)")
+                            Text("\(index + 1)")
                                 .font(.headline)
                                 .frame(width: 30, height: 30)
                                 .background(Color.secondary.opacity(0.2))
@@ -171,10 +162,10 @@ struct LessonDetailView: View {
                                 .foregroundColor(.primary)
                             
                             VStack(alignment: .leading) {
-                                Text("Step \(i): Basic Handshape")
+                                Text("Step \(index + 1): \(sign.title)")
                                     .font(.headline)
                                     .foregroundColor(.primary)
-                                Text("Learn the correct hand positioning.")
+                                Text(sign.description)
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                             }
